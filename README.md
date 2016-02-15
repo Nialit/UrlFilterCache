@@ -1,2 +1,2 @@
 # UrlFilterCache
-JavaEE simple lightweight cache easy configurable url parsing based cache
+JavaEE simple lightweight easy configurable url parsing based cache
