@@ -7,13 +7,11 @@ package ru.cache.rest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
-
-import com.sun.jersey.spi.resource.Singleton;
-
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
 import ru.cache.core.RestCache;
 import ru.cache.core.RestCacheConfigurator;
@@ -22,8 +20,6 @@ import ru.cache.core.RestCacheConfigurator;
  *
  * @author Natal Kaplya
  */
-@Path("")
-@Singleton
 public class CacheRestFacade {
 
 	private static final String notActiveMsg = "EhCache is not active";
@@ -45,7 +41,6 @@ public class CacheRestFacade {
 	@Path("info")
 	@Produces({ "text/plain" })
 	public String getInfo() {
-		System.out.println(this);
 		if (!RestCacheConfigurator.isBroken() && RestCacheConfigurator.isActive()) {
 			StringBuilder sb = new StringBuilder();
 			sb.append(infoMsg);

@@ -2,6 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+
+	<parent>
+		<groupId>ru.lenobl.egov</groupId>
+		<artifactId>MavenParentProject</artifactId>
+		<version>1.0</version>
+		<relativePath>../MavenParentProject/pom.xml</relativePath>
+	</parent>
+
 	<groupId>ru.lenobl.egov.utils</groupId>
 	<artifactId>UrlFilterCache</artifactId>
 	<version>1.0</version>
@@ -11,7 +19,8 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jersey.version>1.13</jersey.version>
+		<jersey.version>2.22.2</jersey.version>
+		<jackson.version>1.9.13</jackson.version>
 		<slf4j.version>1.7.16</slf4j.version>
 		<!-- current log4j 2 release -->
 		<log4j.version>2.5</log4j.version>
@@ -28,15 +37,16 @@
 			<version>1.10.19</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
+		<!-- <dependency> <groupId>com.sun.jersey</groupId> <artifactId>jersey-servlet</artifactId> 
+			<version>${jersey.version}</version> </dependency> -->
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>jsr250-api</artifactId>
 			<version>1.0</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
@@ -72,7 +82,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>UrlFilterCache</finalName>
+		<finalName>Cache</finalName>
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
