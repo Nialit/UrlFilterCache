@@ -14,6 +14,8 @@ import org.glassfish.jersey.server.model.Resource;
 import org.glassfish.jersey.server.model.ResourceMethod;
 
 /**
+ * Class for initializing Cache REST facade. Visit '{$your_app_path}/cache/info' for info.
+ * Do not forget to provide proper security if needed.
  * @author Natal Kaplya
  */
 @ApplicationPath("cache") // set the path to REST web services
@@ -31,15 +33,4 @@ public class DefaultWSInitializer extends ResourceConfig {
 	public static void setCacheRestActive(boolean active) {
 		isActive = active;
 	}
-
-	// @Override
-	// public Set<Class<?>> getClasses() {
-	// if (isActive) {
-	// final Set<Class<?>> classes = new HashSet<Class<?>>();
-	// // register root resource
-	// classes.add(CacheRestFacade.class);
-	// return classes;
-	// } else
-	// return Collections.emptySet();
-	// }
 }
